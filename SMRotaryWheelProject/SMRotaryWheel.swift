@@ -22,7 +22,7 @@ class SMRotaryWheel: UIControl {
     static var deltaAngle: Float = 0
     var startTransform: CGAffineTransform = CGAffineTransform( rotationAngle: CGFloat(0) )
     
-    var angleStep: Double {
+    var angleSize: Double {
         get{
             return Double.pi * 2 / Double ( numberOfSections )
         }
@@ -49,8 +49,8 @@ class SMRotaryWheel: UIControl {
     func drawWheel() {
         // 1
         container = UIView (frame: frame)
-        // 2
-        let angleSize: CGFloat = CGFloat (2 * Double.pi ) / CGFloat ( numberOfSections );
+        // 2 this is a class property now, not just a variable in the method
+        //let angleSize = CGFloat (2 * Double.pi ) / CGFloat ( numberOfSections );
         // 3
         for i in 0..<numberOfSections {
             
@@ -59,7 +59,7 @@ class SMRotaryWheel: UIControl {
             im.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
             im.layer.position = CGPoint(x: container!.bounds.size.width/2.0 - container!.frame.origin.x,
                                         y: container!.bounds.size.height/2.0 - container!.frame.origin.y)
-            im.transform = CGAffineTransform(rotationAngle: angleSize * CGFloat (i)  );
+            im.transform = CGAffineTransform(rotationAngle: CGFloat ( angleSize ) * CGFloat (i)  );
             im.alpha = SMRotaryWheel.minAlphavalue;
             im.tag = i;
             if (i == 0) {
@@ -150,18 +150,18 @@ class SMRotaryWheel: UIControl {
         let radians = atan2f(Float (  container!.transform.b  ), Float (  container!.transform.a)  )
         // 2 Determine which sector is now selected
         currentSector = calculateNewSector (radians)
-        let centerSelected = angleStep / 2 + Double ( currentSector ) * angleStep
+        let centerSelected = angleSize / 2 + Double ( currentSector ) * angleSize
         print ("currents degrees = \(radians * 57.3)")
         print ("currents segCenter degrees = \(centerSelected * 57.3)")
         
         let sign: Float = radians < 0 ? -1 : 1
         var rad2 = abs ( radians )
-        while rad2 > Float ( angleStep ) {
-            rad2 = rad2 - Float ( angleStep )
+        while rad2 > Float ( angleSize ) {
+            rad2 = rad2 - Float ( angleSize )
         }
         
-        if rad2 > Float ( angleStep / 2 ) {
-            rad2 = rad2 - Float ( angleStep  )
+        if rad2 > Float ( angleSize / 2 ) {
+            rad2 = rad2 - Float ( angleSize  )
         }
         
         // 3 - Initialize new value
@@ -170,9 +170,6 @@ class SMRotaryWheel: UIControl {
         
         // 4 Rotate to the center of the selected sector
         
-        
-        // here newVal is new angle to set
-        
         // 7 - Set up animation for final rotation
         
         UIView.beginAnimations(nil, context: nil)
@@ -180,17 +177,19 @@ class SMRotaryWheel: UIControl {
         let t = container!.transform.rotated(by: CGFloat(-newVal))
         container!.transform = t
         UIView.commitAnimations()
-        delegate?.wheelDidChangeValue(newValue: String (currentSector))
         
         // 10 - Highlight selected sector
         if let im = getSectorByValue (currentSector) {
             im.alpha = SMRotaryWheel.maxAlphavalue;
         }
+        
+        // 11 - Report to the caller
+        delegate?.wheelDidChangeValue(newValue: String (currentSector))
     }
     
     func calculateNewSector (_ radians:Float) -> Int {
-        let x =   Float ( angleStep / 2 + 2 * Double.pi ) - radians
-        return Int (x / Float ( angleStep )  ) % numberOfSections
+        let x =   Float ( angleSize / 2 + 2 * Double.pi ) - radians
+        return Int (x / Float ( angleSize )  ) % numberOfSections
     }
     
     func calculateDistanceFromCenter (point: CGPoint) ->  Float     {
