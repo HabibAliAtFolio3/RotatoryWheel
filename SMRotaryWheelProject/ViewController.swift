@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, SMRotaryProtocol {
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let wheel = SMRotaryWheel (frame: CGRect(x: 0, y: 0, width: 200, height: 200), del: self, sectionsNumber: 8)
+        let containerWidth = self.view.frame.width - 20;
+        let wheel = SMRotaryWheel (frame: CGRect(x: 10, y: -(containerWidth/2) + 20, width: containerWidth, height: containerWidth), del: self, sectionsNumber: 10,imageNamesArray: [String](arrayLiteral: "icon0.png","icon1.png","icon2.png","icon3.png","icon4.png"),isSemiCircle:true)
         view.addSubview(wheel)
     }
     
