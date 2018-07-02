@@ -21,8 +21,8 @@ s.description      = "This pod allows you to rotatory wheel control. It can be r
 
   s.homepage         = 'https://github.com/HabibAliAtFolio3/RotatoryWheel.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'habibali' => 'habibali@folio3.com' }
-  s.source           = { :git => 'https://github.com/HabibAliAtFolio3/RotatoryWheel.git', :tag => '0.1.0' }
+  s.author           = { 'Habib Ali' => 'habibali@folio3.com' }
+  s.source           = { :git => 'https://github.com/HabibAliAtFolio3/RotatoryWheel.git', :tag => s.version.to_s }
   s.swift_version    = '4.1'
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
