@@ -13,8 +13,8 @@
 		3CDAC6DE7C3B0B43B1647ED5787C4D84 /* RotatoryWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5725C9795920FD611F9906F2B0FEE2B /* RotatoryWheel-dummy.m */; };
 		57D05B880370332ABEB0D01B4FC67995 /* Pods-RotatoryWheel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F53D83DE48D47F0E3721CB9C95159E33 /* Pods-RotatoryWheel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76512D33FF30638B582785AA724B7E2E /* RotatoryWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA0DE3B5EEE8198DD8FBE3ADF3A1DA6 /* RotatoryWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95E954D120EA6ED600C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D020EA6ED600C1ABA6 /* F3RotatoryWheel.swift */; };
-		95E954D220EA6ED600C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D020EA6ED600C1ABA6 /* F3RotatoryWheel.swift */; };
+		95E954D620EA6F7F00C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D520EA6F7F00C1ABA6 /* F3RotatoryWheel.swift */; };
+		95E954D720EA6F7F00C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D520EA6F7F00C1ABA6 /* F3RotatoryWheel.swift */; };
 		9C99029A88D122FEFB2F44B9ADB78DFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		E2B188CF0E83D57A941FFE3E70877F3A /* Pods-RotatoryWheel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A01BC146CE82AD32088A3D08ECCA74D6 /* Pods-RotatoryWheel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1D9A5B06F60560E8D48A01CB623B1FF /* Pods-RotatoryWheel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A539206C29A734163C4234E4AE0273F9 /* Pods-RotatoryWheel_Example-dummy.m */; };
@@ -57,8 +57,8 @@
 		8EEF6180E51B97DCC8D5CE09A3E3D2A2 /* Pods_RotatoryWheel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotatoryWheel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA9894B24B8F9DC8C84CBBEC015FCA /* Pods-RotatoryWheel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RotatoryWheel_Example.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95E954CF20EA6ED600C1ABA6 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		95E954D020EA6ED600C1ABA6 /* F3RotatoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F3RotatoryWheel.swift; sourceTree = "<group>"; };
+		95E954D420EA6F7F00C1ABA6 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		95E954D520EA6F7F00C1ABA6 /* F3RotatoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F3RotatoryWheel.swift; sourceTree = "<group>"; };
 		98AD9FFF25350CA5296838967EB6E36E /* Pods-RotatoryWheel_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RotatoryWheel_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A01BC146CE82AD32088A3D08ECCA74D6 /* Pods-RotatoryWheel_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RotatoryWheel_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A41E09CAC20CEB1CAE1052CF313DF057 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 		4EAB323D1F6D914EB0BB771C7521213E /* RotatoryWheel */ = {
 			isa = PBXGroup;
 			children = (
+				95E954D320EA6F7F00C1ABA6 /* Classes */,
 				CAACDEF8E8C7666A9CF8F11D1FB32FC7 /* Pod */,
 				533D1FB5306B68CCF8AAAFB1AD632A38 /* Support Files */,
 			);
@@ -183,11 +184,11 @@
 			);
 			sourceTree = "<group>";
 		};
-		95E954CE20EA6ED600C1ABA6 /* Classes */ = {
+		95E954D320EA6F7F00C1ABA6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95E954CF20EA6ED600C1ABA6 /* .gitkeep */,
-				95E954D020EA6ED600C1ABA6 /* F3RotatoryWheel.swift */,
+				95E954D420EA6F7F00C1ABA6 /* .gitkeep */,
+				95E954D520EA6F7F00C1ABA6 /* F3RotatoryWheel.swift */,
 			);
 			name = Classes;
 			path = RotatoryWheel/Classes;
@@ -222,7 +223,6 @@
 		CAACDEF8E8C7666A9CF8F11D1FB32FC7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				95E954CE20EA6ED600C1ABA6 /* Classes */,
 				BD1AE2B2D7038B96B5CD12DED833E944 /* LICENSE */,
 				2AB1E418E9A2206C902434593321071E /* README.md */,
 				2E9BB16F5741C0D9D98FBD9B2BA2895B /* RotatoryWheel.podspec */,
@@ -355,7 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E954D220EA6ED600C1ABA6 /* F3RotatoryWheel.swift in Sources */,
+				95E954D720EA6F7F00C1ABA6 /* F3RotatoryWheel.swift in Sources */,
 				3CDAC6DE7C3B0B43B1647ED5787C4D84 /* RotatoryWheel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E954D120EA6ED600C1ABA6 /* F3RotatoryWheel.swift in Sources */,
+				95E954D620EA6F7F00C1ABA6 /* F3RotatoryWheel.swift in Sources */,
 				F1D9A5B06F60560E8D48A01CB623B1FF /* Pods-RotatoryWheel_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
