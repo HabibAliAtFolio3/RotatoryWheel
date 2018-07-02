@@ -38,6 +38,8 @@ public class F3RotatoryWheel: UIControl {
     var offset = 0
     public var imageNames : [String] = []
     public var isSemiCircle = false
+    public var itemSize : CGSize = CGSize(width: 70, height: 70)
+    public var rotateWheelByOffset : CGFloat = 0.1
     private var customImages: [CustomImageView] = []
     
     static var deltaAngle: Float = 0
@@ -93,7 +95,7 @@ public class F3RotatoryWheel: UIControl {
             im.transform = CGAffineTransform(rotationAngle: CGFloat ( angleSize ) * CGFloat (i)  );
             im.tag = i;
             // 5 - Set sector image
-            let sectorImage = CustomImageView ( frame: CGRect(x: 0, y: 0, width: 70, height: 104))
+            let sectorImage = CustomImageView ( frame: CGRect(x: 0, y: 0, width: itemSize.width, height: itemSize.height))
             sectorImage.transform = CGAffineTransform(rotationAngle: CGFloat(90 * Double.pi/180));
             
             let imgName = imageNames[i]
@@ -116,7 +118,7 @@ public class F3RotatoryWheel: UIControl {
         
         addSubview (container!)
         
-        let t = container!.transform.rotated(by: CGFloat(0.27))
+        let t = container!.transform.rotated(by: rotateWheelByOffset)
         container!.transform = t
     }
     
@@ -251,7 +253,7 @@ public class F3RotatoryWheel: UIControl {
         }
         
         // 3 - Initialize new value
-        let newVal = (rad2 * sign) - 0.27 //centerSelected - Double ( radians ) // Double.pi/4.0;
+        let newVal = (rad2 * sign) - Float(rotateWheelByOffset) //centerSelected - Double ( radians ) // Double.pi/4.0;
         
         
         // 4 Rotate to the center of the selected sector

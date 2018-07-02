@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circularWidgetBG" translatesAutoresizingMaskIntoConstraints="NO" id="7Qe-Hl-3tx">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="76"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="b07-6p-f9J"/>
-                                    <constraint firstAttribute="height" constant="76" id="h3t-ak-uYp"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-jo-8aV" customClass="F3RotatoryWheel" customModule="RotatoryWheel">
                                 <rect key="frame" x="9.5" y="-177.5" width="355" height="355"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,10 +29,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7Qe-Hl-3tx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7ro-Z8-cW8"/>
                             <constraint firstItem="xdJ-jo-8aV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-177.5" id="NSW-QG-mNx"/>
                             <constraint firstItem="xdJ-jo-8aV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hNI-o0-lvV"/>
-                            <constraint firstItem="7Qe-Hl-3tx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rve-xR-xfk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,7 +62,4 @@
             <point key="canvasLocation" x="256.80000000000001" y="-601.34932533733138"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="circularWidgetBG" width="202" height="76"/>
-    </resources>
 </document>
