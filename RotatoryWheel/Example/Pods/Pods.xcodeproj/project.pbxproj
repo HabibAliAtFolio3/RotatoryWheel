@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00D2B0D620916DE27444D17B1F654F0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		0A468D65757A5904BCDB13F91C339092 /* Pods-RotatoryWheel_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F84B46D7F2BE061B5888B250DFFB029 /* Pods-RotatoryWheel_Tests-dummy.m */; };
 		2C3AF19160C227E8A9AF51EF2E5D4D95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		3CDAC6DE7C3B0B43B1647ED5787C4D84 /* RotatoryWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5725C9795920FD611F9906F2B0FEE2B /* RotatoryWheel-dummy.m */; };
 		57D05B880370332ABEB0D01B4FC67995 /* Pods-RotatoryWheel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F53D83DE48D47F0E3721CB9C95159E33 /* Pods-RotatoryWheel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76512D33FF30638B582785AA724B7E2E /* RotatoryWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA0DE3B5EEE8198DD8FBE3ADF3A1DA6 /* RotatoryWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95E954DA20EA72D000C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D920EA72D000C1ABA6 /* F3RotatoryWheel.swift */; };
-		95E954DB20EA72D000C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954D920EA72D000C1ABA6 /* F3RotatoryWheel.swift */; };
+		95E954DF20EA760A00C1ABA6 /* F3RotatoryWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E954DD20EA760A00C1ABA6 /* F3RotatoryWheel.swift */; };
 		9C99029A88D122FEFB2F44B9ADB78DFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		E2B188CF0E83D57A941FFE3E70877F3A /* Pods-RotatoryWheel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A01BC146CE82AD32088A3D08ECCA74D6 /* Pods-RotatoryWheel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1D9A5B06F60560E8D48A01CB623B1FF /* Pods-RotatoryWheel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A539206C29A734163C4234E4AE0273F9 /* Pods-RotatoryWheel_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,18 +47,15 @@
 		5FF5B23416662A625FFF87252F38956D /* Pods-RotatoryWheel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RotatoryWheel_Example.release.xcconfig"; sourceTree = "<group>"; };
 		628ED01A7DEDB628B82B3BF339B69914 /* RotatoryWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RotatoryWheel.modulemap; sourceTree = "<group>"; };
 		7B99FDA276DAFDAC9BE86C6065AFD2AB /* Pods-RotatoryWheel_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RotatoryWheel_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7F84B46D7F2BE061B5888B250DFFB029 /* Pods-RotatoryWheel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RotatoryWheel_Tests-dummy.m"; sourceTree = "<group>"; };
 		7F858053E9D8A4D627F352E23C18F12C /* Pods-RotatoryWheel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RotatoryWheel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8CA0DE3B5EEE8198DD8FBE3ADF3A1DA6 /* RotatoryWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RotatoryWheel-umbrella.h"; sourceTree = "<group>"; };
 		8EEF6180E51B97DCC8D5CE09A3E3D2A2 /* Pods_RotatoryWheel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotatoryWheel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA9894B24B8F9DC8C84CBBEC015FCA /* Pods-RotatoryWheel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RotatoryWheel_Example.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95E954D920EA72D000C1ABA6 /* F3RotatoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F3RotatoryWheel.swift; sourceTree = "<group>"; };
+		95E954DD20EA760A00C1ABA6 /* F3RotatoryWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F3RotatoryWheel.swift; sourceTree = "<group>"; };
 		98AD9FFF25350CA5296838967EB6E36E /* Pods-RotatoryWheel_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RotatoryWheel_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A01BC146CE82AD32088A3D08ECCA74D6 /* Pods-RotatoryWheel_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RotatoryWheel_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A41E09CAC20CEB1CAE1052CF313DF057 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A539206C29A734163C4234E4AE0273F9 /* Pods-RotatoryWheel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RotatoryWheel_Example-dummy.m"; sourceTree = "<group>"; };
-		A5725C9795920FD611F9906F2B0FEE2B /* RotatoryWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RotatoryWheel-dummy.m"; sourceTree = "<group>"; };
 		AD094D6B988F03A0B2E4A7927BD723D1 /* Pods-RotatoryWheel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RotatoryWheel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B37DD1AC8D28EEC121F48B0A1C3156B9 /* Pods-RotatoryWheel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RotatoryWheel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9440362D7B724CD7CEC0564D68B11F /* Pods-RotatoryWheel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RotatoryWheel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -110,7 +103,6 @@
 				46E76C509B90E39C20758475985F0E75 /* Pods-RotatoryWheel_Tests.modulemap */,
 				361B5840C8F63855273AC83CFD928F1F /* Pods-RotatoryWheel_Tests-acknowledgements.markdown */,
 				1B3C0C6CB64F270AC3AA4D469873986B /* Pods-RotatoryWheel_Tests-acknowledgements.plist */,
-				7F84B46D7F2BE061B5888B250DFFB029 /* Pods-RotatoryWheel_Tests-dummy.m */,
 				98AD9FFF25350CA5296838967EB6E36E /* Pods-RotatoryWheel_Tests-frameworks.sh */,
 				C1AF708445B4DABFC3E8C107C4CC6442 /* Pods-RotatoryWheel_Tests-resources.sh */,
 				A01BC146CE82AD32088A3D08ECCA74D6 /* Pods-RotatoryWheel_Tests-umbrella.h */,
@@ -132,6 +124,7 @@
 		4EAB323D1F6D914EB0BB771C7521213E /* RotatoryWheel */ = {
 			isa = PBXGroup;
 			children = (
+				95E954DC20EA760A00C1ABA6 /* Classes */,
 				CAACDEF8E8C7666A9CF8F11D1FB32FC7 /* Pod */,
 				533D1FB5306B68CCF8AAAFB1AD632A38 /* Support Files */,
 			);
@@ -145,7 +138,6 @@
 				5654A62A1C07F5F966AC870F3FC87FCA /* Info.plist */,
 				628ED01A7DEDB628B82B3BF339B69914 /* RotatoryWheel.modulemap */,
 				FA6C9A369AC760A4D7DA4EC69F669643 /* RotatoryWheel.xcconfig */,
-				A5725C9795920FD611F9906F2B0FEE2B /* RotatoryWheel-dummy.m */,
 				5332AAEF7D0D1647D7919A111C0BF2F0 /* RotatoryWheel-prefix.pch */,
 				8CA0DE3B5EEE8198DD8FBE3ADF3A1DA6 /* RotatoryWheel-umbrella.h */,
 			);
@@ -182,10 +174,10 @@
 			);
 			sourceTree = "<group>";
 		};
-		95E954D820EA72D000C1ABA6 /* Classes */ = {
+		95E954DC20EA760A00C1ABA6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95E954D920EA72D000C1ABA6 /* F3RotatoryWheel.swift */,
+				95E954DD20EA760A00C1ABA6 /* F3RotatoryWheel.swift */,
 			);
 			name = Classes;
 			path = RotatoryWheel/Classes;
@@ -198,7 +190,6 @@
 				92AA9894B24B8F9DC8C84CBBEC015FCA /* Pods-RotatoryWheel_Example.modulemap */,
 				7B99FDA276DAFDAC9BE86C6065AFD2AB /* Pods-RotatoryWheel_Example-acknowledgements.markdown */,
 				BA9440362D7B724CD7CEC0564D68B11F /* Pods-RotatoryWheel_Example-acknowledgements.plist */,
-				A539206C29A734163C4234E4AE0273F9 /* Pods-RotatoryWheel_Example-dummy.m */,
 				F7B8512BBD298F147287CAE2CBD8DA9B /* Pods-RotatoryWheel_Example-frameworks.sh */,
 				C303E5C3DB61A5A752A0092A973768FE /* Pods-RotatoryWheel_Example-resources.sh */,
 				F53D83DE48D47F0E3721CB9C95159E33 /* Pods-RotatoryWheel_Example-umbrella.h */,
@@ -220,7 +211,6 @@
 		CAACDEF8E8C7666A9CF8F11D1FB32FC7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				95E954D820EA72D000C1ABA6 /* Classes */,
 				BD1AE2B2D7038B96B5CD12DED833E944 /* LICENSE */,
 				2AB1E418E9A2206C902434593321071E /* README.md */,
 				2E9BB16F5741C0D9D98FBD9B2BA2895B /* RotatoryWheel.podspec */,
@@ -353,8 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E954DB20EA72D000C1ABA6 /* F3RotatoryWheel.swift in Sources */,
-				3CDAC6DE7C3B0B43B1647ED5787C4D84 /* RotatoryWheel-dummy.m in Sources */,
+				95E954DF20EA760A00C1ABA6 /* F3RotatoryWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A468D65757A5904BCDB13F91C339092 /* Pods-RotatoryWheel_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,8 +358,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E954DA20EA72D000C1ABA6 /* F3RotatoryWheel.swift in Sources */,
-				F1D9A5B06F60560E8D48A01CB623B1FF /* Pods-RotatoryWheel_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
