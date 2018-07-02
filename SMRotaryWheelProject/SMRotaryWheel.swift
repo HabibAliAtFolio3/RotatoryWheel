@@ -13,15 +13,32 @@ protocol SMRotaryProtocol {
     func wheelDidChangeValue (newValue: String)
 }
 
+public class CustomImageView: UIImageView {
+    var curYTranslation : CGFloat = 0
+    
+    public func applyYTranslation(value:CGFloat){
+        self.transform = self.transform.translatedBy(x: 0, y: value)
+        curYTranslation = value
+    }
+    
+    public func revertYTranslation(){
+        if curYTranslation != 0{
+            applyYTranslation(value: -curYTranslation)
+        }
+        curYTranslation = 0
+    }
+}
+
 class SMRotaryWheel: UIControl {
     
-    var delegate: SMRotaryProtocol?
+    public var delegate: SMRotaryProtocol?
     var container: UIView?
-    var numberOfSections: Int = 0
-    let scale:CGFloat = 1.5
+    public var numberOfSections: Int = 0
+    public var scale:CGFloat = 1.5
     var offset = 0
-    var imageNames : [String] = []
-    var isSemiCircle = false
+    public var imageNames : [String] = []
+    public var isSemiCircle = false
+    private var customImages: [CustomImageView] = []
     
     static var deltaAngle: Float = 0
     var startTransform: CGAffineTransform = CGAffineTransform( rotationAngle: CGFloat(0) )
@@ -36,28 +53,24 @@ class SMRotaryWheel: UIControl {
         super.init(frame: frame)
     }
     
-    convenience init (frame: CGRect, del: SMRotaryProtocol, sectionsNumber: Int, imageNamesArray: [String], isSemiCircle:Bool) {
-        self.init (frame: frame)
-        self.numberOfSections = sectionsNumber
-        self.delegate = del
-        var imgNames = imageNamesArray
-        imgNames = imgNames.reversed()
-        if isSemiCircle{
-            self.imageNames = imgNames + imgNames
-        }
-        else{
-            self.imageNames = imgNames
-        }
-        self.isSemiCircle = isSemiCircle
-        drawWheel ()
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     static  var minAlphavalue: CGFloat = 0.6
     static  var maxAlphavalue: CGFloat = 1.0
+    
+    public func reloadView(){
+        if isSemiCircle{
+            self.imageNames = imageNames + imageNames
+        }
+        
+        container?.removeFromSuperview()
+        container = nil
+        
+        customImages.removeAll()
+        drawWheel()
+    }
     
     func drawWheel() {
         // 1
@@ -72,7 +85,7 @@ class SMRotaryWheel: UIControl {
         for i in 0..<numberOfSections {
             
             // 4 - Create image view
-            let imFrame = CGRect(x: 0, y: 0, width: container!.bounds.size.width/2, height: container!.bounds.size.width/2*7/9)
+            let imFrame = CGRect(x: 0, y: 0, width: container!.bounds.size.width/2, height: container!.bounds.size.width/2*7/10.4)
             let im = UIView(frame: imFrame)
             im.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
             im.layer.position = CGPoint(x: container!.bounds.size.width/2,
@@ -80,17 +93,22 @@ class SMRotaryWheel: UIControl {
             im.transform = CGAffineTransform(rotationAngle: CGFloat ( angleSize ) * CGFloat (i)  );
             im.tag = i;
             // 5 - Set sector image
-            let sectorImage = UIImageView ( frame: CGRect(x: 12, y: 15, width: 40, height: 40))
+            let sectorImage = CustomImageView ( frame: CGRect(x: 0, y: 0, width: 70, height: 104))
+            sectorImage.transform = CGAffineTransform(rotationAngle: CGFloat(90 * Double.pi/180));
+            
             let imgName = imageNames[i]
             sectorImage.image = UIImage (named: imgName)
+            sectorImage.tag = i
             im.addSubview (sectorImage)
             // 6 - Add image view to container
             container!.addSubview (im)
+            customImages.append(sectorImage)
+            
+            positionCustomImage(image: sectorImage, tag: sectorImage.tag)
             
             if (i == currentSector) {
                 sectorImage.transform = sectorImage.transform.scaledBy(x: scale, y: scale)
             }
-            
         }
         
         // 7
@@ -98,8 +116,69 @@ class SMRotaryWheel: UIControl {
         
         addSubview (container!)
         
-        let t = container!.transform.rotated(by: CGFloat(0.1))
+        let t = container!.transform.rotated(by: CGFloat(0.27))
         container!.transform = t
+    }
+    
+    func positionCustomImage(image:CustomImageView, tag:Int){
+        image.revertYTranslation()
+        if (tag == currentSector) {
+            image.applyYTranslation(value: -5)
+            
+        }
+        else{
+            
+            if tag == nextTag(){
+                image.applyYTranslation(value: -22)
+            }
+            else if tag == nextToNextTag(){
+                image.applyYTranslation(value: -11)
+            }
+            else if tag == prevTag(){
+                image.applyYTranslation(value: -24)
+            }
+            else if tag == prevToPrevTag(){
+                image.applyYTranslation(value: -12)
+            }
+        }
+    }
+    
+    func nextTag()->Int{
+        var _nextTag = currentSector + 1
+        if (_nextTag >= numberOfSections){
+            _nextTag = numberOfSections%_nextTag
+        }
+        return _nextTag
+    }
+    
+    func nextToNextTag()->Int{
+        var _nextToNextTag = currentSector + 2
+        if (_nextToNextTag >= numberOfSections){
+            _nextToNextTag = numberOfSections%_nextToNextTag
+        }
+        return _nextToNextTag
+    }
+    
+    func prevTag()->Int{
+        var _prevTag = currentSector - 1
+        if (_prevTag < 0){
+            _prevTag = numberOfSections + _prevTag
+        }
+        return _prevTag
+    }
+    
+    func prevToPrevTag()->Int{
+        var _prevToPrevTag = currentSector - 2
+        if (_prevToPrevTag < 0){
+            _prevToPrevTag = numberOfSections + _prevToPrevTag
+        }
+        return _prevToPrevTag
+    }
+    
+    func positionAllCustomImages(){
+        for customImage in customImages{
+            positionCustomImage(image: customImage, tag: customImage.tag)
+        }
     }
     
     var currentSector: Int = 0
@@ -118,8 +197,11 @@ class SMRotaryWheel: UIControl {
         // 5 - Set current sector's alpha value to the minimum value
         let im:UIView = getSectorByValue (currentSector)!
         for sectorImg in im.subviews{
-            if sectorImg is UIImageView{
-                sectorImg.transform = sectorImg.transform.scaledBy(x:1/scale,y:1/scale)
+            if sectorImg is CustomImageView{
+                UIView.animate(withDuration: 0.25, animations: {
+                    sectorImg.transform = sectorImg.transform.scaledBy(x:1/self.scale,y:1/self.scale)
+                }, completion: nil)
+                
             }
         }
         return true;
@@ -169,7 +251,7 @@ class SMRotaryWheel: UIControl {
         }
         
         // 3 - Initialize new value
-        let newVal = (rad2 * sign) - 0.1 //centerSelected - Double ( radians ) // Double.pi/4.0;
+        let newVal = (rad2 * sign) - 0.27 //centerSelected - Double ( radians ) // Double.pi/4.0;
         
         
         // 4 Rotate to the center of the selected sector
@@ -182,11 +264,18 @@ class SMRotaryWheel: UIControl {
         container!.transform = t
         UIView.commitAnimations()
         
+        // 12 - Position All Custom Image
+        
+        positionAllCustomImages()
+        
         // 10 - Highlight selected sector
         if let im = getSectorByValue (currentSector) {
             for sectorImg in im.subviews{
                 if sectorImg is UIImageView{
-                    sectorImg.transform = sectorImg.transform.scaledBy(x: scale, y: scale)
+                    UIView.animate(withDuration: 0.25, animations: {
+                        sectorImg.transform = sectorImg.transform.scaledBy(x: self.scale, y: self.scale)
+                    }, completion: nil)
+                    
                 }
             }
         }
@@ -199,17 +288,22 @@ class SMRotaryWheel: UIControl {
                 currentValue = currentValue - numberOfSections/2
             }
         }
+        
+        
+        
         delegate?.wheelDidChangeValue(newValue: String (currentValue))
     }
     
     func calculateNewSector (_ radians:Float) -> Int {
         let x =   Float ( angleSize / 2 + 2 * Double.pi ) - radians
         var sectorNum = Int (x / Float ( angleSize )  ) % numberOfSections
+        
+        
         sectorNum -= offset // to select the middle section
         if sectorNum < 0{
             sectorNum = numberOfSections + sectorNum
         }
-        
+        print(sectorNum)
         return sectorNum
     }
     
