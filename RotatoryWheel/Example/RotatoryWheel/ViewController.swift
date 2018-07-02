@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import F3RotaryWheel
+import RotaryWheel
 
 class ViewController: UIViewController, F3RotaryProtocol {
     
