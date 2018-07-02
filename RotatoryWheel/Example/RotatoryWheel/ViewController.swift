@@ -9,9 +9,9 @@
 import UIKit
 import RotatoryWheel
 
-class ViewController: UIViewController{//}, F3RotatoryWheelProtocol {
+class ViewController: UIViewController, F3RotatoryWheelProtocol {
     
-    //@IBOutlet weak var wheel: F3RotatoryWheel!
+    @IBOutlet weak var wheel: F3RotatoryWheel!
     let screenWidth = UIScreen.main.bounds.width
     
     override func viewDidLoad() {
@@ -30,12 +30,12 @@ class ViewController: UIViewController{//}, F3RotatoryWheelProtocol {
         
         
         //Wheel initialization
-//        wheel.delegate = self
-//        wheel.numberOfSections = 10
-//        wheel.imageNames = [String](arrayLiteral: "icon0.png","icon1.png","icon2.png","icon3.png","icon4.png")
-//        wheel.isSemiCircle = true
-//        wheel.scale = 1.5
-//        wheel.reloadView()
+        wheel.delegate = self
+        wheel.numberOfSections = 10
+        wheel.imageNames = [String](arrayLiteral: "icon0.png","icon1.png","icon2.png","icon3.png","icon4.png")
+        wheel.isSemiCircle = true
+        wheel.scale = 1.5
+        wheel.reloadView()
         
     }
     

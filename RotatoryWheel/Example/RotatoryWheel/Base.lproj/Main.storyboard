@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="76" id="h3t-ak-uYp"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-jo-8aV" customClass="SMRotaryWheel" customModule="RotatoryWheel_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-jo-8aV" customClass="F3RotatoryWheel" customModule="RotatoryWheel">
                                 <rect key="frame" x="9.5" y="-177.5" width="355" height="355"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
