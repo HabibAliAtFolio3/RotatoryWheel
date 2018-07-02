@@ -9,11 +9,11 @@
 import UIKit
 import QuartzCore
 
-protocol F3RotatoryWheelProtocol {
+public protocol F3RotatoryWheelProtocol {
     func wheelDidChangeValue (newValue: String)
 }
 
-public class CustomImageView: UIImageView {
+class CustomImageView: UIImageView {
     var curYTranslation : CGFloat = 0
     
     public func applyYTranslation(value:CGFloat){
@@ -29,7 +29,7 @@ public class CustomImageView: UIImageView {
     }
 }
 
-class F3RotatoryWheel: UIControl {
+public class F3RotatoryWheel: UIControl {
     
     public var delegate: F3RotatoryWheelProtocol?
     var container: UIView?
@@ -53,7 +53,7 @@ class F3RotatoryWheel: UIControl {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super .init(coder: aDecoder)
     }
     
@@ -183,7 +183,7 @@ class F3RotatoryWheel: UIControl {
     
     var currentSector: Int = 0
     
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         // 1 - Get touch position
         let touchPoint = touch.location(in: self)
         // 2 - Calculate distance from center
@@ -217,7 +217,7 @@ class F3RotatoryWheel: UIControl {
         return res;
     }
     
-    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         //let radians = atan2f(Float (  container!.transform.b  ), Float (  container!.transform.a)  )
         //print("rad is \(radians)")
         
@@ -230,7 +230,7 @@ class F3RotatoryWheel: UIControl {
         return true
     }
     
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+    override public func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         
         // 1 - Get current container rotation in radians
         let radians = atan2f(Float (  container!.transform.b  ), Float (  container!.transform.a)  )

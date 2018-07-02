@@ -7,11 +7,11 @@
 //
 
 import UIKit
-//import F3RotatoryWheel
+import RotatoryWheel
 
 class ViewController: UIViewController{//}, F3RotatoryWheelProtocol {
     
-    //@IBOutlet weak var wheel: F3RotaryWheel!
+    //@IBOutlet weak var wheel: F3RotatoryWheel!
     let screenWidth = UIScreen.main.bounds.width
     
     override func viewDidLoad() {
