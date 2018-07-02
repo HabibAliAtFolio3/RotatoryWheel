@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RotatoryWheel_Example' do
+  pod 'RotatoryWheel', :path => '../'
+
+  target 'RotatoryWheel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

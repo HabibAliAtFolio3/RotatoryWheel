@@ -1,0 +1,16 @@
+PODS:
+  - RotatoryWheel (0.1.0)
+
+DEPENDENCIES:
+  - RotatoryWheel (from `../`)
+
+EXTERNAL SOURCES:
+  RotatoryWheel:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RotatoryWheel: 5e88428a11dc601b006aadfa60f43b4d05b0daa4
+
+PODFILE CHECKSUM: e944d62260349062bb28b2e304f9a88bc98e4fae
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K0x-9W-IqK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wheel-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RotatoryWheel_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circularWidgetBG" translatesAutoresizingMaskIntoConstraints="NO" id="7Qe-Hl-3tx">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="b07-6p-f9J"/>
+                                    <constraint firstAttribute="height" constant="76" id="h3t-ak-uYp"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-jo-8aV" customClass="SMRotaryWheel" customModule="RotatoryWheel_Example" customModuleProvider="target">
+                                <rect key="frame" x="9.5" y="-177.5" width="355" height="355"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="355" id="kBM-lL-0oh"/>
+                                    <constraint firstAttribute="width" constant="355" id="w3k-wU-Adv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Qe-Hl-3tx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7ro-Z8-cW8"/>
+                            <constraint firstItem="xdJ-jo-8aV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-177.5" id="NSW-QG-mNx"/>
+                            <constraint firstItem="xdJ-jo-8aV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hNI-o0-lvV"/>
+                            <constraint firstItem="7Qe-Hl-3tx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rve-xR-xfk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wheel" id="Ch2-J7-i2U"/>
+                    <connections>
+                        <outlet property="wheel" destination="xdJ-jo-8aV" id="0Dv-2d-Eca"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="95.802098950524751"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9os-TU-D2B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K0x-9W-IqK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="sDo-Kw-eZb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vqj-V6-bJR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfM-Vs-HM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.80000000000001" y="-601.34932533733138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circularWidgetBG" width="202" height="76"/>
+    </resources>
+</document>
