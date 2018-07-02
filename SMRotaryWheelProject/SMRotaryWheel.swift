@@ -54,7 +54,7 @@ class SMRotaryWheel: UIControl {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super .init(coder: aDecoder)
     }
     
     static  var minAlphavalue: CGFloat = 0.6
