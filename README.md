@@ -1,11 +1,7 @@
 # RotatoryWheel
 
-[![CI Status](https://img.shields.io/travis/habibali/RotatoryWheel.svg?style=flat)](https://travis-ci.org/habibali/RotatoryWheel)
-[![Version](https://img.shields.io/cocoapods/v/RotatoryWheel.svg?style=flat)](https://cocoapods.org/pods/RotatoryWheel)
-[![License](https://img.shields.io/cocoapods/l/RotatoryWheel.svg?style=flat)](https://cocoapods.org/pods/RotatoryWheel)
-[![Platform](https://img.shields.io/cocoapods/p/RotatoryWheel.svg?style=flat)](https://cocoapods.org/pods/RotatoryWheel)
-![RotatoryWheel Circle](https://github.com/HabibAliAtFolio3/RotatoryWheel/blob/RotatoryWheelAdvance/Circle.gif)
-![RotatoryWheel SemiCircle](https://github.com/HabibAliAtFolio3/RotatoryWheel/blob/RotatoryWheelAdvance/SemiCircle.gif)
+![RotatoryWheel Circle](https://github.com/HabibAliAtFolio3/RotatoryWheel/blob/master/Circle.gif)
+![RotatoryWheel SemiCircle](https://github.com/HabibAliAtFolio3/RotatoryWheel/blob/master/SemiCircle.gif)
 
 ## Usage
 
