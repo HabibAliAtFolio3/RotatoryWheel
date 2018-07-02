@@ -19,7 +19,7 @@ class ViewController: UIViewController, F3RotatoryWheelProtocol {
         
         //This is alternate way to init wheel
         //let screenWidth = UIScreen.main.bounds.width
-        //let containerWidth : CGFloat = 355 //this is hard coded to fix it with the circular image of width 200, other wise this can be any value
+        //let containerWidth : CGFloat = screenWidth - 20 // can be any value
         //let wheel = SMRotaryWheel (frame: CGRect(x: (screenWidth - containerWidth)/2, y: -(containerWidth/2), width: containerWidth, height: containerWidth))
         //view.addSubview(wheel)
         
