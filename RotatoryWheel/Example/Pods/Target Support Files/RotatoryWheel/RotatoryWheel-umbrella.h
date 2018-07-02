@@ -10,7 +10,6 @@
 #endif
 #endif
 
-
 FOUNDATION_EXPORT double RotatoryWheelVersionNumber;
 FOUNDATION_EXPORT const unsigned char RotatoryWheelVersionString[];
 

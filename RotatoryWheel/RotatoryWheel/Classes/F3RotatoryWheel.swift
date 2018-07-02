@@ -1,5 +1,5 @@
 //
-//  F3RotaryWheel.swift
+//  F3RotatoryWheel.swift
 //  RotaryWheelProject
 //
 //  Created by Habib Ali on 8/28/17.
@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-protocol F3RotaryProtocol {
+protocol F3RotatoryWheelProtocol {
     func wheelDidChangeValue (newValue: String)
 }
 
@@ -29,9 +29,9 @@ public class CustomImageView: UIImageView {
     }
 }
 
-class F3RotaryWheel: UIControl {
+class F3RotatoryWheel: UIControl {
     
-    public var delegate: F3RotaryProtocol?
+    public var delegate: F3RotatoryWheelProtocol?
     var container: UIView?
     public var numberOfSections: Int = 0
     public var scale:CGFloat = 1.5
@@ -190,7 +190,7 @@ class F3RotaryWheel: UIControl {
         let dx = touchPoint.x - container!.center.x;
         let dy = touchPoint.y - container!.center.y;
         // 3 - Calculate arctangent value
-        F3RotaryWheel.deltaAngle = Float( atan2(dy,dx) );
+        F3RotatoryWheel.deltaAngle = Float( atan2(dy,dx) );
         // 4 - Save current transform
         startTransform = container!.transform;
         
@@ -225,7 +225,7 @@ class F3RotaryWheel: UIControl {
         let dx = pt.x  - container!.center.x
         let dy = pt.y  - container!.center.y
         let ang = Float ( atan2(dy,dx) )
-        let angleDifference = F3RotaryWheel.deltaAngle - ang
+        let angleDifference = F3RotatoryWheel.deltaAngle - ang
         container!.transform = startTransform.rotated( by: CGFloat ( -angleDifference)  )
         return true
     }
