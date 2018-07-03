@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-public protocol F3RotatoryWheelProtocol {
+public protocol F3RotatoryWheelProtocol : class{
     func wheelDidChangeValue (newValue: String)
 }
 
@@ -31,7 +31,7 @@ class CustomImageView: UIImageView {
 
 public class F3RotatoryWheel: UIControl {
     
-    public var delegate: F3RotatoryWheelProtocol?
+    public weak var delegate: F3RotatoryWheelProtocol?
     var container: UIView?
     public var numberOfSections: Int = 0
     public var scale:CGFloat = 1.5
