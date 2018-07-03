@@ -12,11 +12,11 @@ Pod::Spec.new do |s|
   s.summary          = 'This pod allows you to rotatory wheel control'
   s.description      = 'This pod allows you to rotatory wheel control. It can be rendered as complete or semi circle. Selected Item can be extracted via delegate. Selected Item scale ratio can be controlled via scale variable'
   s.homepage         = 'https://github.com/HabibAliAtFolio3/RotatoryWheel'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'RotatoryWheel/LICENSE' }
   s.author           = { 'Habib Ali' => 'habibali@folio3.com' }
   s.source           = { :git => 'https://github.com/HabibAliAtFolio3/RotatoryWheel.git', :tag => s.version.to_s }
   s.swift_version    = '4.1'
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
-  s.source_files = 'RotatoryWheel/Classes/**/*'
+  s.source_files = 'RotatoryWheel/RotatoryWheel/Classes/**/*'
 end
