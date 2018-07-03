@@ -11,6 +11,7 @@ import QuartzCore
 
 public protocol F3RotatoryWheelProtocol : class{
     func wheelDidChangeValue (newValue: String)
+    func imageNameForIndex (index:Int) ->String
 }
 
 class CustomImageView: UIImageView {
@@ -36,7 +37,6 @@ public class F3RotatoryWheel: UIControl {
     public var numberOfSections: Int = 0
     public var scale:CGFloat = 1.5
     var offset = 0
-    public var imageNames : [String] = []
     public var isSemiCircle = false
     public var itemSize : CGSize = CGSize(width: 70, height: 70)
     public var rotateWheelByOffset : CGFloat = 0.1
@@ -63,9 +63,6 @@ public class F3RotatoryWheel: UIControl {
     static  var maxAlphavalue: CGFloat = 1.0
     
     public func reloadView(){
-        if isSemiCircle{
-            self.imageNames = imageNames + imageNames
-        }
         
         container?.removeFromSuperview()
         container = nil
@@ -98,8 +95,8 @@ public class F3RotatoryWheel: UIControl {
             let sectorImage = CustomImageView ( frame: CGRect(x: 0, y: 0, width: itemSize.width, height: itemSize.height))
             sectorImage.transform = CGAffineTransform(rotationAngle: CGFloat(90 * Double.pi/180));
             
-            let imgName = imageNames[i]
-            sectorImage.image = UIImage (named: imgName)
+            let imgName = self.delegate?.imageNameForIndex(index: i)
+            sectorImage.image = UIImage (named: imgName!)
             sectorImage.tag = i
             im.addSubview (sectorImage)
             // 6 - Add image view to container
