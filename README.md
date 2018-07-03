@@ -31,13 +31,21 @@ view.addSubview(wheel)
 
 wheel.delegate = self
 wheel.numberOfSections = 10
-wheel.imageNames = [String](arrayLiteral: "icon0.png","icon1.png","icon2.png","icon3.png","icon4.png")
 wheel.isSemiCircle = true
 wheel.scale = 1.5
 wheel.itemSize = CGSize(width: 70, height: 70) //Image size
 wheel.rotateWheelByOffset = 0.1 //due to image size some time you have to tweak this offset when semi circle mode is selected
 wheel.reloadView()
 
+and implent these two delegates
+func wheelDidChangeValue (newValue: String) {
+  print ("changed value to \(newValue)")
+}
+    
+func imageNameForIndex(index: Int) -> String {
+  let imgName = "icon"+String(index)+".png"
+  return imgName
+}
 
 ```
 
