@@ -37,7 +37,7 @@ wheel.itemSize = CGSize(width: 70, height: 70) //Image size
 wheel.rotateWheelByOffset = 0.1 //due to image size some time you have to tweak this offset when semi circle mode is selected
 wheel.reloadView()
 
-and implent these two delegates
+and implement these two delegates
 func wheelDidChangeValue (newValue: String) {
   print ("changed value to \(newValue)")
 }
